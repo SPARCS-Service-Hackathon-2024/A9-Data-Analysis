@@ -5,7 +5,7 @@ from fontproperties import fontprop
 
 df = pd.read_csv('pages/rnd_population.csv')
 
-st.title("시도 별 연구개발인력 현황")
+st.title("시도별 연구개발인력 현황")
 
 selected_regions = st.multiselect('지역 선택', options=df['region'], default=["서울", "대전", "대구", "광주"])
 
