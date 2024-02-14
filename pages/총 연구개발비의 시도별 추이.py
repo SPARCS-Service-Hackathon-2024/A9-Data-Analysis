@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
-plt.rc('font', family='AppleGothic')
+from fontproperties import fontprop
 
 # CSV 파일을 읽어와서 데이터프레임으로 변환
 df = pd.read_csv('pages/rnd_money.csv')
@@ -25,7 +24,7 @@ plt.figure(figsize=(10, 6))  # 그래프 크기 설정
 for region, values in data.items():
     plt.fill_between(range(2017, 2021), values, label=region, alpha=0.3)
 
-plt.xlabel('연도')  # x축 라벨 설정
-plt.ylabel('연구 개발비 (단위 : 억원)')  # y축 라벨 설정
+plt.xlabel('연도', fontproperties=fontprop)  # x축 라벨 설정
+plt.ylabel('연구 개발비 (단위 : 억원)', fontproperties=fontprop)  # y축 라벨 설정
 plt.legend()  # 범례 표시
 st.pyplot(plt)  # 그래프를 Streamlit 앱에 표시
