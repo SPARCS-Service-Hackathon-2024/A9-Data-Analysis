@@ -7,6 +7,7 @@ from fontproperties import fontprop
 df = pd.read_csv('pages/retirement.csv')
 
 st.title("최근 3년간 고경력 과학자 퇴직자 수")
+st.markdown("대덕 연구 단지 기준")
 
 # 각 연도를 열로 변환하여 데이터 프레임 생성
 df_transposed = df.T
