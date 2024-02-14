@@ -7,7 +7,7 @@ df = pd.read_csv('pages/rnd_money.csv')
 
 st.title("총 연구개발비의 시도별 추이")
 
-selected_regions = st.multiselect('지역 선택', options=df['region'])
+selected_regions = st.multiselect('지역 선택', options=df['region'], default=["서울", "대전", "대구", "광주"])
 
 data = {}
 for region in selected_regions:
