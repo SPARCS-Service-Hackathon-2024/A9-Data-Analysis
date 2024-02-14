@@ -1,14 +1,13 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
-plt.rc('font', family='AppleGothic')
+from fontproperties import fontprop
 
 df = pd.read_csv('pages/rnd_population.csv')
 
 st.title("시도 별 연구개발인력 현황")
 
-selected_regions = st.multiselect('지역 선택', options=df['region'])
+selected_regions = st.multiselect('지역 선택', options=df['region'], default=["서울", "대전", "대구", "광주"])
 
 data = {}
 for region in selected_regions:
@@ -20,8 +19,8 @@ plt.figure(figsize=(10, 6))
 for region, values in data.items():
     plt.plot(range(2015, 2021), values, label=region)
 
-plt.xlabel('연도')  
-plt.ylabel('인구 수')
-plt.title('지역 별 연구개발인력 현황')  
+plt.xlabel('연도', fontproperties=fontprop)
+plt.ylabel('인구 수', fontproperties=fontprop)
+plt.title('지역 별 연구개발인력 현황', fontproperties=fontprop)
 plt.legend()  
 st.pyplot(plt)  

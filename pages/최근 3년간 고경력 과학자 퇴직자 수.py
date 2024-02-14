@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
-plt.rc('font', family='AppleGothic')
+from fontproperties import fontprop
 
 # CSV 파일을 읽어와서 데이터프레임으로 변환
 df = pd.read_csv('pages/retirement.csv')

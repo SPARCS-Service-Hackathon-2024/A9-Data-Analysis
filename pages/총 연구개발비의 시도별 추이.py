@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
-plt.rc('font', family='AppleGothic')
+from fontproperties import fontprop
 
 df = pd.read_csv('pages/rnd_money.csv')
 
@@ -20,8 +19,8 @@ plt.figure(figsize=(10, 6))
 for region, values in data.items():
     plt.fill_between(range(2017, 2021), values, label=region, alpha=0.3)
 
-plt.xlabel('연도')  
-plt.ylabel('연구 개발비 (단위 : 억원)')  
-plt.title('총 연구개발비의 시도별 추이')  
+plt.xlabel('연도', fontproperties=fontprop)
+plt.ylabel('연구 개발비 (단위 : 억원)', fontproperties=fontprop)
+plt.title('총 연구개발비의 시도별 추이', fontproperties=fontprop)
 plt.legend()  
 st.pyplot(plt)  
