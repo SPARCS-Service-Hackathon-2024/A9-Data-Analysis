@@ -7,6 +7,8 @@ plt.rc('font', family='AppleGothic')
 # CSV 파일을 읽어와서 데이터프레임으로 변환
 df = pd.read_csv('pages/rnd_population.csv')
 
+st.title('지역 별 연구개발인력 현황')  # 그래프 제목 설정
+
 # CSV 파일의 region 열을 선택지로 사용하여 multiselect 생성
 selected_regions = st.multiselect('지역 선택', options=df['region'])
 
@@ -25,6 +27,5 @@ for region, values in data.items():
 
 plt.xlabel('연도')  # x축 라벨 설정
 plt.ylabel('인구 수')  # y축 라벨 설정
-plt.title('지역 별 연구개발인력 현황')  # 그래프 제목 설정
 plt.legend()  # 범례 표시
 st.pyplot(plt)  # 그래프를 Streamlit 앱에 표시
