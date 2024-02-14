@@ -3,9 +3,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from fontproperties import fontprop
 
+plt.rc('font', family='AppleGothic')
 df = pd.read_csv('pages/rnd_population.csv')
 
 st.title("시도별 연구개발인력 현황")
+st.markdown("부산 과학기술정보 서비스")
 
 selected_regions = st.multiselect('지역 선택', options=df['region'], default=["서울", "대전", "대구", "광주"])
 
@@ -22,5 +24,5 @@ for region, values in data.items():
 plt.xlabel('연도', fontproperties=fontprop)
 plt.ylabel('인구 수', fontproperties=fontprop)
 plt.title('지역 별 연구개발인력 현황', fontproperties=fontprop)
-plt.legend()  
+plt.legend()
 st.pyplot(plt)  
