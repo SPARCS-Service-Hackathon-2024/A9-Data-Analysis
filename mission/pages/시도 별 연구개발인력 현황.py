@@ -6,7 +6,7 @@ plt.rc('font', family='AppleGothic')
 
 df = pd.read_csv('pages/rnd_population.csv')
 
-st.title("지역 별 연구개발인력 현황")
+st.title("시도 별 연구개발인력 현황")
 
 selected_regions = st.multiselect('지역 선택', options=df['region'])
 
