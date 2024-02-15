@@ -7,9 +7,9 @@ plt.rc('font', family='AppleGothic')
 df = pd.read_csv('pages/rnd_population.csv')
 
 st.title("시도별 연구개발인력 현황")
-st.markdown("부산 과학기술정보 서비스")
+st.markdown("출처 : 부산 과학기술정보 서비스")
 
-selected_regions = st.multiselect('지역 선택', options=df['region'], default=["서울", "대전", "대구", "광주"])
+selected_regions = st.multiselect('지역 선택', options=df['region'], default=["인천", "대전", "대구", "광주"])
 
 data = {}
 for region in selected_regions:

@@ -4,7 +4,7 @@ import pandas as pd
 # CSV 파일을 읽어와서 데이터프레임으로 변환
 df = pd.read_csv('pages/retirement_ready.csv')
 
-st.title("과학기술인 퇴직 준비")
+st.title("대덕연구단지 과학기술인 퇴직 준비")
 st.markdown("출처 : 대덕넷")
 
 # 각 연도를 열로 변환하여 데이터 프레임 생성
