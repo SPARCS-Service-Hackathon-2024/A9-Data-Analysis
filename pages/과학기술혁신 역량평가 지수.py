@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib
 from fontproperties import fontprop
 
 plt.rc('font', family='AppleGothic')
@@ -18,7 +17,7 @@ for region in selected_regions:
     for year in range(2018, 2022):
         data[region].append(df[df['region'] == region][str(year)].values[0])
 
-fig, ax = plt.subplots() 
+fig, ax = plt.subplots()
 plt.figure(figsize=(10, 6))  
 for region, values in data.items():
     plt.plot(range(2018, 2022), values, label=region)

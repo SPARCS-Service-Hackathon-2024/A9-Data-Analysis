@@ -17,9 +17,12 @@ for region in selected_regions:
     for year in range(2015, 2021):
         data[region].append(int(df[df['region'] == region][str(year)].str.replace(',', '').values[0]))
 
+fig, ax = plt.subplots()
 plt.figure(figsize=(10, 6))  
 for region, values in data.items():
     plt.plot(range(2015, 2021), values, label=region)
+for label in ax.get_xticklabels():
+    label.set_fontproperties(fontprop)
 
 plt.xlabel('연도', fontproperties=fontprop)
 plt.ylabel('인구 수', fontproperties=fontprop)

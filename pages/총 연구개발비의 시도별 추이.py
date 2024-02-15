@@ -17,9 +17,12 @@ for region in selected_regions:
     for year in range(2017, 2021):
         data[region].append(df[df['region'] == region][str(year)].values[0])
 
+fig, ax = plt.subplots()
 plt.figure(figsize=(10, 6))  
 for region, values in data.items():
     plt.fill_between(range(2017, 2021), values, label=region, alpha=0.3)
+for label in ax.get_xticklabels():
+    label.set_fontproperties(fontprop)
 
 plt.xlabel('연도', fontproperties=fontprop)
 plt.ylabel('연구 개발비 (단위 : 억원)', fontproperties=fontprop)
