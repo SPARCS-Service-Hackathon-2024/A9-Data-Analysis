@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib
 from fontproperties import fontprop
 
 plt.rc('font', family='AppleGothic')
@@ -16,13 +17,16 @@ for region in selected_regions:
     data[region] = []
     for year in range(2018, 2022):
         data[region].append(df[df['region'] == region][str(year)].values[0])
- 
+
+fig, ax = plt.subplots() 
 plt.figure(figsize=(10, 6))  
 for region, values in data.items():
     plt.plot(range(2018, 2022), values, label=region)
+for label in ax.get_xticklabels():
+    label.set_fontproperties(fontprop)
 
 plt.xlabel('연도', fontproperties=fontprop)
 plt.ylabel('과학기술혁신 역량평가 지수', fontproperties=fontprop)
 plt.title('지역 과학기술혁신 역량평가 지수', fontproperties=fontprop)
-plt.legend()  
+plt.legend()
 st.pyplot(plt)  

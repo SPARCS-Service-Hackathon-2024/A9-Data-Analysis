@@ -4,4 +4,3 @@ from matplotlib import rc
 
 font_path = os.path.join(os.getcwd(), "NanumGothic-Regular.ttf")
 fontprop = font_manager.FontProperties(fname=font_path)
-rc('font', family = 'NanumGothic', size = 14)
